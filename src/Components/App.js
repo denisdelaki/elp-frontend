@@ -2,7 +2,7 @@ import React from 'react';
 import Landingpage from '../Components/Landingpage.js'
 import Footer from '../Components/Footer.js'
 import Nav from '../Components/Nav.js'
-import Sidebar from '../Components/Sidebar'
+import Dashboard from '../Components/Dashboard'
 import '../index.css';
 function App() {
   return (
@@ -11,7 +11,7 @@ function App() {
       {/* <Nav />
       <Landingpage />
       <Footer />  */}
-      <Sidebar />
+      <Dashboard />
     </div>
   )
 }
