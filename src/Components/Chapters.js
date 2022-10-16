@@ -1,6 +1,16 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 function Chapters() {
+  const [chapter, setChapter]=useState([])
+  useEffect(() => {
+    fetch("").then((response) => {
+      if (response.ok) {
+        response.json().then((chapter) => {
+          setChapter(chapter)
+        })
+      }
+    })
+  }, [])
   return (
     <div className='grid grid-cols-5'>
       <div className='border h-72 w-96 my-4 shadow-xl '>
