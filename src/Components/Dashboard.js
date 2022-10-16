@@ -13,7 +13,7 @@ function Dashboard() {
     <div> 
         <Sidebar />
         <Header />
-        <div className="relative left-20 top-2">
+        <div className="fixed mx-20 top-22">
             <Routes>
         <Route
           exact
