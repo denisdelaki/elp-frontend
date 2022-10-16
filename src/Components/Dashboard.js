@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from "react";
 import Sidebar from '../Components/Sidebar'
 import Header from '../Components/Header'
 import Home from '../Components/Home'
@@ -8,7 +8,19 @@ import Hub from '../Components/Hub'
 import Opportunities from '../Components/Opportunities'
 import Aboutus from '../Components/Aboutus'
 import { Routes, Route } from "react-router-dom";
-function Dashboard() {
+function Dashboard() { 
+  const [chapter, setChapter] = useState([]);
+  useEffect(() => {
+    fetch("https://elp-portal.herokuapp.com/api/v1/chapters/").then(
+      (response) => {
+        if (response.ok) {
+          response.json().then((chapter) => {
+           setChapter(chapter)
+          });
+        }
+      }
+    );
+  }, []);
   return (
     <div> 
         <Sidebar />
@@ -23,7 +35,7 @@ function Dashboard() {
         <Route
           exact
           path="/chapters"
-          element={<Chapters />}
+          element={<Chapters chapter={chapter} />}
         ></Route>
         <Route
           exact
